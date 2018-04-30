@@ -10,11 +10,11 @@ class LoginDefinition extends atoum\test
     public function testConstruct()
     {
         $this->given(
-                $options = array(
+            $options = array(
                     'username' => 'john@doe',
                     'password' => 'chuckN0331S'
                 )
-            )
+        )
             ->if($this->newTestedInstance($options))
             ->then
             ->object($this->testedInstance)->isTestedInstance()

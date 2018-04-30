@@ -74,10 +74,10 @@ abstract class AbstractRequestDefinition implements RequestDefinitionInterface
     public function removeOption($optionName)
     {
         if (isset($this->required[$optionName])) {
-            unset($this->required[$optionName]);    
-        } elseif($this->optional[$optionName]) {
+            unset($this->required[$optionName]);
+        } elseif ($this->optional[$optionName]) {
             unset($this->optional[$optionName]);
-        } 
+        }
     }
     
     /**

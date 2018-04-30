@@ -10,11 +10,11 @@ class GetCustomerDefinition extends atoum\test
     public function testConstruct()
     {
         $this->given(
-                $options = array(
+            $options = array(
                     'shopId' => 1,
                     'customerId' => 1
                 )
-            )
+        )
             ->if($this->newTestedInstance($options))
             ->then
             ->object($this->testedInstance)->isTestedInstance()

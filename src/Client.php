@@ -66,7 +66,8 @@ class Client
                 $definition->getUrl(),
                 [
                     'body' => json_encode($definition->getBody()),
-                    'headers' => $definition->authenticationRequired() ? ['authorization' => sprintf('Bearer %s', $this->token)] : []
+                    'headers' => $definition->authenticationRequired() ? [
+                        'authorization' => sprintf('Bearer %s', $this->token)] : []
                 ]
             );
         } catch (ClientException $e) {
@@ -82,7 +83,7 @@ class Client
             $response = $this->login()->getBody();
             $this->token = $response['token'];
             if (!$this->shopId) {
-                $this->shopId = $response['default_shop_id'];    
+                $this->shopId = $response['default_shop_id'];
             }
         }
         $options['shopId'] = $this->shopId;

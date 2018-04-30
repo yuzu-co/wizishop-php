@@ -10,11 +10,11 @@ class GetOrderDefinition extends atoum\test
     public function testConstruct()
     {
         $this->given(
-                $options = array(
+            $options = array(
                     'shopId' => 1,
                     'orderId' => 1
                 )
-            )
+        )
             ->if($this->newTestedInstance($options))
             ->then
             ->object($this->testedInstance)->isTestedInstance()
